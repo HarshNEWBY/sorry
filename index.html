@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(#ffe6f0, #fff);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #ff4d88;
+    }
+
+    #dayCounter {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    button {
+      background: #ff4d88;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff1a66;
+    }
+
+    .letter {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px pink;
+    }
+
+    .arrows {
+      font-size: 22px;
+      margin: 20px;
+    }
+
+    .forgive-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💗 Day Counter 💗</h1>
+  <div id="dayCounter"></div>
+
+  <!-- MUSIC -->
+  <button onclick="playMusic()">▶ Play Music</button>
+  <audio id="music" src="music.mp3"></audio>
+
+  <h2>I'm really sorry 😔</h2>
+
+  <div class="letter">
+    <!-- modification corner -->
+    <p>
+      My love, I know I made a mistake and hurt you.  
+      You mean the world to me and I hate seeing you upset.  
+      Please forgive me, I promise to do better and love you always. ❤️
+    </p>
+    <!-- modification corner -->
+  </div>
+
+  <div class="arrows">
+    ✍️✍️✍️✍️ CLICK HERE IF YOU FORGIVE ME ✍️✍️✍️✍️  
+    <br>
+    👇👇👇👇👇👇👇👇👇👇
+  </div>
+
+  <button class="forgive-btn" onclick="goNext()">
+    If you forgive me, click here 💖  
+    <br>
+    (Don’t click if you don’t forgive me 😢)
+  </button>
+
+  <script>
+
+const days = 1; //modification center
+
+
+document.getElementById("dayCounter").innerText =
+  "Today is Day " + days + " 💕";
+
+
+    function playMusic() {
+      document.getElementById("music").play();
+    }
+
+    function goNext() {
+      window.location.href = "forgive.html";
+    }
+  </script>
+
+</body>
+</html>
