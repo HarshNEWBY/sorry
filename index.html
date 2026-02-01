@@ -58,20 +58,25 @@
   <h1>💗 Day Counter 💗</h1>
   <div id="dayCounter"></div>
 
-  <!-- MUSIC -->
+  <!-- PLAY BUTTON -->
   <button onclick="playMusic()">▶ Play Music</button>
-  <audio id="music" src="music.mp3"></audio>
+
+  <!-- AUDIO -->
+  <audio id="music" preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
 
   <h2>I'm really sorry 😔</h2>
 
   <div class="letter">
-    <!-- modification corner -->
+    <!-- ✏️ EDIT YOUR APOLOGY LETTER BELOW -->
     <p>
       My love, I know I made a mistake and hurt you.  
       You mean the world to me and I hate seeing you upset.  
       Please forgive me, I promise to do better and love you always. ❤️
     </p>
-    <!-- modification corner -->
+    <!-- ✏️ EDIT YOUR APOLOGY LETTER ABOVE -->
   </div>
 
   <div class="arrows">
@@ -87,16 +92,22 @@
   </button>
 
   <script>
+    // ✏️ CHANGE THE DAY NUMBER BELOW MANUALLY
+    const days = 1; // change to 2, 3, 4, etc.
+    // ✏️ CHANGE THE DAY NUMBER ABOVE
 
-const days = 1; //modification center
-
-
-document.getElementById("dayCounter").innerText =
-  "Today is Day " + days + " 💕";
-
+    document.getElementById("dayCounter").innerText =
+      "Today is Day " + days + " 💕";
 
     function playMusic() {
-      document.getElementById("music").play();
+      const audio = document.getElementById("music");
+      audio.volume = 1.0;
+      audio.muted = false;
+
+      audio.play().catch(err => {
+        alert("Tap the play button once more if it didn’t start");
+        console.log(err);
+      });
     }
 
     function goNext() {
